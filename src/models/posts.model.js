@@ -13,41 +13,49 @@ const postSchema = new mongoose.Schema({
     default: Date.now
   },
   hashtags: {
-    type: [String],
-    default: []
+    type: String,
+    default: '#Hola'
   },
   hashtags2: {
-    type: [String],
-    default: []
+    type: String,
+    default: '#Hola'
   },
   hashtags3: {
-    type: [String],
-    default: []
+    type: String,
+    default: '#Hola'
   },
   name: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users',
     required: true
   },
-  reaccions: {
-    type: [String],
-    default: []
+  reactions: {
+    type: String,
+    default: '🔥'
   },
-  reaccions2: {
-    type: [String],
-    default: []
+  reactions2: {
+    type: String,
+    default: '😤'
   },
-  reaccions3: {
-    type: [String],
-    default: []
+  reactions3: {
+    type: String,
+    default: '🤯'
   },
-  reaccions4: {
-    type: [String],
-    default: []
+  reactions4: {
+    type: String,
+    default: '🚀'
+  },
+  numberOfReactions: {
+    type: Number,
+    default: 1
+  },
+  numberOfComments: {
+    type: Number,
+    default: 1
   },
   profilePicture: {
     type: String,
-    required: true
+    required: false
   },
   image: {
     type: String,
