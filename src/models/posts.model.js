@@ -53,10 +53,10 @@ const postSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
-  profilePicture: {
-    type: String,
-    required: false
-  },
+  // profilePicture: {
+  //   type: String,
+  //   required: false
+  // },
   image: {
     type: String,
     required: true

@@ -16,4 +16,8 @@ async function getById(id) {
   return user
 }
 
-module.exports = { create, getById }
+async function getAll() {
+  const users = await Users.find()
+  return users
+}
+module.exports = { create, getById, getAll}
