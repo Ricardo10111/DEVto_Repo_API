@@ -44,6 +44,27 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const post = await useCasePost.getById(id)
+    res.json({
+      success: true,
+      message: 'Post found',
+      data: {
+        post
+      }
+    })
+  } catch (error) {
+    res.status(error.status || 500)
+    res.json({
+      success: false,
+      message: 'Error at get post',
+      error: error.message
+    })
+  }
+})
+
 router.patch('/:id', auth, async (req, res) => {
   try {
     const { id } = req.params

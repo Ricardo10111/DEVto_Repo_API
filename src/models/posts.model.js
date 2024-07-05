@@ -4,11 +4,29 @@ const mongoose = require('mongoose')
 const modelName = 'posts'
 
 const postSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
   description: {
     type: String,
     required: true
   },
   date: {
+    type: Date,
+    required: true
+  },
+  location: {
+    type: String,
+    default: 'México',
+    required: true
+  },
+  work: {
+    type: String,
+    default: 'Desarrollador',
+    required: true
+  },
+  join: {
     type: Date,
     default: Date.now
   },
@@ -53,10 +71,9 @@ const postSchema = new mongoose.Schema({
     type: Number,
     default: 1
   },
- 
+
   image: {
-    type: String,
-    required: true
+    type: String
   }
 })
 

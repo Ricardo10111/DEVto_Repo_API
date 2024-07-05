@@ -9,6 +9,10 @@ async function getAll() {
   const posts = await Posts.find().populate('name')
   return posts
 }
+async function getById(id) {
+  const post = await Posts.findById(id).populate('name')
+  return post
+}
 
 async function updateById(id, postDate) {
   const post = await Posts.findByIdAndUpdate(id, postDate, { new: true })
@@ -24,5 +28,6 @@ module.exports = {
   create,
   getAll,
   updateById,
-  deleteById
+  deleteById,
+  getById
 }
